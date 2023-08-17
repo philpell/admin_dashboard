@@ -1,1 +1,622 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+  }
 
+  :root {
+    --blue-color: #1c2939;
+    --contrastBlue: #111827;
+    --font-family: 'Calibri', Arial, 'Trebuchet MS', sans-serif, Helvetica, sans-serif;
+  }
+
+  .container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 14vw 35vw 47vw;
+    grid-template-rows: 18vh 92vh 7vh;
+    gap: 10px;
+  }
+  
+  .container div {
+    padding: 10px;
+    font-size: 32px;
+    font-family: var(--font-family);
+    font-weight: bold;
+    color: black;
+  }
+  
+  .header {
+    display: grid;
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-content: center;
+    align-self: center;
+  }
+  
+  .topnav img {
+    position: absolute;
+    left: 15%;
+  }
+
+  h1 {
+    position: absolute;
+    left: 19%;
+    top: 11%;
+    text-align: left;
+    font-size: 22px;
+  }
+  
+  h2 {
+    position: absolute;
+    left: 19%;
+    top: 7%;
+    text-align: left;
+    font-size: 15px;
+  }
+
+  .logo {
+    justify-self: start;
+    background-image: url(images/CompellingLogoSeven.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 10vw;
+    height: 5vh;
+    margin: 5px 11px;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+
+  /* Add a black background color to the top navigation bar */
+.topnav {
+  overflow: hidden;
+  grid-column: 1 / 2;
+}
+
+.search {
+  overflow: hidden;
+  grid-column: 2 / 3;
+}
+
+.menu {
+  overflow: hidden;
+  grid-column: 3 / 4;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 6px 10px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.menu a {
+  float: right;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 6px 10px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.notification {
+  float: right;
+  background-image: url(images/bell-ring.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 5vh;
+  width: 5vh;
+  border: none;
+  margin: 0px 9px;
+}
+
+.notification:hover {
+  transform: scale(1.1);
+}
+
+.upload {
+  float: right;
+  background-image: url(images/upload.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 10vh;
+  width: 10vh;
+  margin: -5px 10px;
+  border: none;
+}
+
+.upload:hover {
+  transform: scale(1.1);
+}
+
+.share {
+  float: right;
+  background-image: url(images/share.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 6vh;
+  width: 6vh;
+  margin: -3px 10px;
+  border: none;
+}
+
+.share:hover {
+  transform: scale(1.1);
+}
+
+.menu a:hover {
+  background-color: var(--blue-color);
+  color: white;
+  box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+  background-color: var(--blue-color);
+  color: white;
+}
+
+/* Style the search box inside the navigation bar */
+.search input[type=text] {
+  float: middle;
+  padding: 4px;
+  outline: #bdbdbd auto 2px;
+  font-size: 17px;
+  border-radius: 10px;
+}
+
+.search input[type=text]:active {
+  background-color: rgb(218, 218, 218);
+  color: white;
+}
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .topnav a input[type=text] {
+    float: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+}
+
+  @media screen and (max-width: 600px) {
+    .search input[type=text] {
+      float: none;
+      display: block;
+      text-align: center;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+
+  .search input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+  
+  .sidebar {
+    background-color: var(--blue-color);
+    align-items: center;
+    grid-row: 1 / 4;
+    display: grid;
+    box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    margin: -5px;
+  }
+  
+  .sidebar .side-content {
+    font-size: 16px;
+    font-weight: normal;
+    display: grid; 
+    align-items: center;
+    overflow: auto;
+    margin: -10px 10px;
+    background-color: var(--blue-color);
+    color: white;
+  }
+
+  /* Change the color of links on hover */
+  .side-content:hover {
+    font-weight: 700;
+  }
+
+  .article {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    grid-template-rows: repeat(3, minmax(250px, 1fr));
+    gap: 15px;
+    vertical-align: middle;
+  }
+  
+  .article p {
+    font-size: 18px;
+    font-family: sans-serif;
+    color: white;
+    text-align: left;
+  }
+
+  .article .cardTop {
+    background-image: url(images/graph_1.jpg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black; 
+    text-align: center;
+    overflow: auto;
+    margin: 0px;
+    padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 0px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 5px;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    /* max-height: 210px; */
+    transition: background-image 2s ease-in-out;
+  }
+
+ .cardTop p {
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-size: 16px;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .cardTop:hover p {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .cardTop:hover  {
+    background-image:none;
+    
+  }
+
+  .article .cardBottom {
+    background-image: url(images/graph_2.jpg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black; 
+    text-align: center;
+    overflow: auto;
+    margin: 0px;
+    padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 0px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 5px;
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    /* max-height: 210px; */
+    transition: background-image 2s ease-in-out;
+  }
+
+  .cardBottom p {
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-size: 16px;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .cardBottom:hover p {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .cardBottom:hover  {
+    background-image:none;
+    transition: background-image 2s;
+  }
+
+  .cardBottom p {
+    color: black;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  .cardBottom .title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .cardTop p {
+    color: black;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  .cardTop .title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .currentProjects .projectCalc {
+    background-image: url(images/calcImage.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    overflow: auto;
+    margin: 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 0px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 5px;
+    transition: background-size 2s ease-in-out;
+  }
+
+    .currentProjects .projectEAS{
+    background-image: url(images/etch-a-sketch.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    overflow: auto;
+    margin: 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 0px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 5px;
+    transition: background-size 2s ease-in-out;
+  }
+
+  .currentProjects .projectLPS{
+    background-image: url(images/LPS.jpg);
+    background-size: 160%;
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    overflow: auto;
+    margin: 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 0px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 5px;
+    transition: background-size 2s ease-in-out;
+  }
+
+  .currentProjects .projectSignUp{
+    background-image: url(images/signUp.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    overflow: auto;
+    margin: 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 0px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 5px;
+    transition: background-size 2s ease-in-out;
+  }
+
+  .currentProjects .futureProject{
+    background-color: var(--blue-color);
+    vertical-align: middle;
+    overflow: auto;
+    margin: 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 0px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 5px;
+    grid-column: 1 / 3;
+  }
+
+  .projectCalc p {
+    text-decoration: none;
+    font-family: var(--font-family);
+    visibility: hidden;
+    opacity: 0;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+  }
+
+  .projectCalc a {
+    text-decoration: none;
+  }
+  .projectCalc:hover p {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .projectCalc:hover {
+    background-size: 140%;
+  }
+  
+  .projectCalc .title  {
+    font-size: 30px;
+    text-align: center;
+    background-color: #55555594;
+  }
+
+  .projectEAS p {
+    text-decoration: none;
+    font-family: var(--font-family);
+    visibility: hidden;
+    opacity: 0;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+  }
+
+  .projectEAS a {
+    text-decoration: none;
+  }
+  .projectEAS:hover p  {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .projectEAS:hover  {
+    background-size: 140%;
+  }
+  
+  .projectEAS .title  {
+    font-size: 30px;
+    text-align: center;
+    background-color: #55555594;
+  }
+
+  .projectLPS p {
+    text-decoration: none;
+    font-family: var(--font-family);
+    visibility: hidden;
+    opacity: 0;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+  }
+
+  .projectLPS a {
+    text-decoration: none;
+  }
+  .projectLPS:hover p  {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .projectLPS:hover  {
+    background-size: 200%;
+  }
+  
+  .projectLPS .title  {
+    font-size: 22px;
+    text-align: center;
+    background-color: #55555594;
+  }
+
+  .projectSignUp p {
+    text-decoration: none;
+    font-family: var(--font-family);
+    visibility: hidden;
+    opacity: 0;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+  }
+
+  .projectSignUp a {
+    text-decoration: none;
+  }
+  .projectSignUp:hover p  {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .projectSignUp:hover  {
+    background-size: 140%;
+  }
+  
+  .projectSignUp .title  {
+    font-size: 30px;
+    text-align: center;
+    background-color: #55555594;
+  }
+
+  .futureProject .comingSoon {
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-size: 25px;
+    visibility: hidden;
+    opacity: 0;
+    color: white;
+    background-color: var(--blue-color);
+  }
+
+  .futureProject:hover .comingSoon  {
+    visibility: visible;
+    opacity: 1;
+    color: white;
+    background-color: var(--blue-color);
+  }
+  
+  .futureProject .title {
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-size: 25px;
+    color: white;
+    background-color: var(--blue-color);
+  }
+
+  .currentProjects {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5px;
+  }
+  
+  .currentProjects .project {
+    background-color: #FFFFFF;
+    color: black;
+    text-align: center;
+    overflow: auto;
+    margin: 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 0px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    border-radius: 5px;
+  }
+  
+  .project p {
+    color: black;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 0px 10px;
+  }
+  
+  .project .title {
+    font-size: 18px;
+    text-align: center;
+  }
+/* Github link and text formatting */
+#githubLogo {
+    position: absolute;
+    right: 1.5%;
+    height: 4vh;
+    background-blend-mode: lighten;
+  }
+  
+  h5 {
+    position: absolute;
+    right: 4%;
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-size: 13px;
+    visibility: hidden;
+    opacity: 0;
+    margin: 0px;
+    padding: 0%;
+    transition: opacity 1s, visibility 1s;
+  }
+  
+  .footer {
+    grid-column: 1 / 4;
+    grid-row: 4 / 5;
+    text-decoration: none;
+    width: 100%;
+    overflow: auto;
+    margin: -10px;
+    padding: 0%;
+    background-color: var(--contrastBlue);
+  }
+
+  .footer:hover h5 {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Set formatting for scroll bar when overflow occurs */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: var(--blue-color);
+    border-radius: 15px; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
